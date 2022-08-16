@@ -11,19 +11,26 @@ export default function Header() {
   return (
     <Navbar bg='light' expand='lg'>
       <Container>
-        <Navbar.Brand href='#home'>
-          <Image src='/svg/Portfolio.svg' alt='Logo' height={55} width={120} />
+        <Navbar.Brand>
+          <Link href='/'>
+            <Image
+              src='/svg/Portfolio.svg'
+              alt='Logo'
+              height={55}
+              width={120}
+            />
+          </Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls='basic-navbar-nav' />
         <Navbar.Collapse id='basic-navbar-nav'>
           <Nav>
-            <Link href='/'>Qualifications</Link>
+            <Link href='/about'>Qualifications</Link>
           </Nav>
           <Nav>
-            <Link href='/'>Skills</Link>
+            <Link href='/about'>Skills</Link>
           </Nav>
           <Nav>
-            <Link href='/'>Mentality</Link>
+            <Link href='/about'>Mentality</Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

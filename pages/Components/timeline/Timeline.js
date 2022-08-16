@@ -8,7 +8,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 const currentlySelectedBlueColor = {
-  background: '#495057',
+  background: '#339af0',
   color: '#fff',
 }
 
@@ -17,9 +17,19 @@ const iconBabyBackgroundColor = {
   color: '#fff',
 }
 
+const iconBabyBorderColor = {
+  border: '0.2em #ae3ec9 solid',
+  'box-shadow': '0.3em 0.3em #888888',
+}
+
 const iconYoungStudentBackgroundColor = {
   background: '#4263eb',
   color: '#fff',
+}
+
+const iconYoungStudentBorderColor = {
+  border: '0.2em #4263eb solid',
+  'box-shadow': '0.3em 0.3em #888888',
 }
 
 const iconOlderStudentBackgroundColor = {
@@ -27,9 +37,9 @@ const iconOlderStudentBackgroundColor = {
   color: '#fff',
 }
 
-const iconRedBackgroundColor = {
-  background: 'rgb(233, 30, 99)',
-  color: '#fff',
+const iconOlderStudentBorderColor = {
+  border: '0.2em #1098ad solid',
+  'box-shadow': '0.3em 0.3em #888888',
 }
 
 const iconSoldierBackgroundColor = {
@@ -37,29 +47,31 @@ const iconSoldierBackgroundColor = {
   color: '#fff',
 }
 
+const iconSoldierBorderColor = {
+  border: '0.2em #37b24d solid',
+  'box-shadow': '0.3em 0.3em #888888',
+}
+
 const iconUniStudentBackgroundColor = {
   background: '#f59f00',
   color: '#fff',
 }
 
+const iconUniStudentBorderColor = {
+  border: '0.2em #f59f00 solid',
+  'box-shadow': '0.3em 0.3em #888888',
+}
+
 export default function Timeline() {
   return (
     <>
-      <VerticalTimeline lineColor='black'>
+      <VerticalTimeline lineColor='black' className='py-5 px-3'>
         <VerticalTimelineElement
-          className='vertical-timeline-element--work'
-          contentStyle={currentlySelectedBlueColor}
-          contentArrowStyle={currentlySelectedBlueColor}
+          className='vertical-timeline-element--work clement'
           date='2000 - 2005'
           iconStyle={iconBabyBackgroundColor}
-          icon={
-            <Image
-              src='/svg/Baby_boy.svg'
-              height={26}
-              width={26}
-              alt='An icon of a baby boy'
-            />
-          }
+          contentStyle={iconBabyBorderColor}
+          contentArrowStyle={iconBabyBackgroundColor}
         >
           <h3>Baby</h3>
           <p>I loved playing with toys and running around.</p>
@@ -71,6 +83,8 @@ export default function Timeline() {
           className='vertical-timeline-element--work'
           date='2005 - 2012'
           iconStyle={iconYoungStudentBackgroundColor}
+          contentStyle={iconYoungStudentBorderColor}
+          contentArrowStyle={iconYoungStudentBackgroundColor}
         >
           <h3>Young Student</h3>
           <p>Went to an after school daycare.</p>
@@ -82,6 +96,8 @@ export default function Timeline() {
           className='vertical-timeline-element--work'
           date='2012 - 2019'
           iconStyle={iconOlderStudentBackgroundColor}
+          contentStyle={iconOlderStudentBorderColor}
+          contentArrowStyle={iconOlderStudentBackgroundColor}
         >
           <h3>Older Student</h3>
           <p>
@@ -97,6 +113,8 @@ export default function Timeline() {
           className='vertical-timeline-element--work'
           date='2019 - 2022'
           iconStyle={iconSoldierBackgroundColor}
+          contentStyle={iconSoldierBorderColor}
+          contentArrowStyle={iconSoldierBackgroundColor}
         >
           <h3>National Service</h3>
           <p>Hated NS at first</p>
@@ -109,6 +127,8 @@ export default function Timeline() {
           className='vertical-timeline-element--education'
           date='2022 - ?'
           iconStyle={iconUniStudentBackgroundColor}
+          contentStyle={iconUniStudentBackgroundColor}
+          contentArrowStyle={iconUniStudentBackgroundColor}
         >
           <h3>Uni Student</h3>
           <p>Just started.</p>
