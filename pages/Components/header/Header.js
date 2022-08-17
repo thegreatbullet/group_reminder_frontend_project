@@ -1,39 +1,152 @@
-import React from 'react'
+import * as React from 'react'
+import PropTypes from 'prop-types'
+import AppBar from '@mui/material/AppBar'
+import Toolbar from '@mui/material/Toolbar'
+import Typography from '@mui/material/Typography'
+import CssBaseline from '@mui/material/CssBaseline'
+import useScrollTrigger from '@mui/material/useScrollTrigger'
+import Container from '@mui/material/Container'
+import Slide from '@mui/material/Slide'
 
-import Container from 'react-bootstrap/Container'
-import Nav from 'react-bootstrap/Nav'
-import Navbar from 'react-bootstrap/Navbar'
+import { Box } from '@mui/material'
 
-import Image from 'next/image'
 import Link from 'next/link'
 
-export default function Header() {
+function HideOnScroll(props) {
+  const { children, window } = props
+  // Note that you normally won't need to set the window ref as useScrollTrigger
+  // will default to window.
+  // This is only being set here because the demo is in an iframe.
+  const trigger = useScrollTrigger({
+    target: window ? window() : undefined,
+  })
+
   return (
-    <Navbar bg='light' expand='lg'>
-      <Container>
-        <Navbar.Brand>
-          <Link href='/'>
-            <Image
-              src='/svg/Portfolio.svg'
-              alt='Logo'
-              height={55}
-              width={120}
-            />
-          </Link>
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls='basic-navbar-nav' />
-        <Navbar.Collapse id='basic-navbar-nav'>
-          <Nav>
-            <Link href='/about'>Qualifications</Link>
-          </Nav>
-          <Nav>
-            <Link href='/about'>Skills</Link>
-          </Nav>
-          <Nav>
-            <Link href='/about'>Mentality</Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+    <Slide appear={false} direction='down' in={!trigger}>
+      {children}
+    </Slide>
+  )
+}
+
+HideOnScroll.propTypes = {
+  children: PropTypes.element.isRequired,
+  /**
+   * Injected by the documentation to work in an iframe.
+   * You won't need it on your project.
+   */
+  window: PropTypes.func,
+}
+
+export default function Header(props) {
+  return (
+    <React.Fragment>
+      <CssBaseline />
+      {/* Hide on desktop */}
+      <Box sx={{ display: { xs: 'block', md: 'none' } }}>
+        <HideOnScroll
+          {...props}
+          sx={{
+            display: {
+              xs: 'block',
+              md: 'none',
+            },
+          }}
+        >
+          <AppBar>
+            <Container maxWidth='xl'>
+              <Toolbar disableGutters>
+                {/* Logo Desktop */}
+                <Typography
+                  variant='h6'
+                  noWrap
+                  sx={{
+                    mr: 2,
+                    display: {
+                      xs: 'none',
+                      md: 'block',
+                    },
+                    fontFamily: 'lato',
+                    fontWeight: 700,
+                    letterSpacing: '.3rem',
+                    color: 'inherit',
+                    textDecoration: 'none',
+                    fontSize: '2rem',
+                    py: 2,
+                  }}
+                >
+                  Portfolio
+                </Typography>
+                {/* Logo (Mobile) */}
+                <Typography
+                  variant='h5'
+                  href=''
+                  sx={{
+                    mr: 2,
+                    display: { md: 'none' },
+                    flexGrow: 1,
+                    fontFamily: 'lato',
+                    fontWeight: 700,
+                    letterSpacing: '.3rem',
+                    color: 'inherit',
+                    textDecoration: 'none',
+                  }}
+                >
+                  Portfolio
+                </Typography>
+              </Toolbar>
+            </Container>
+          </AppBar>
+        </HideOnScroll>
+      </Box>
+
+      {/* Hide on mobile */}
+      <Box sx={{ display: { xs: 'none', md: 'block' } }}>
+        <AppBar>
+          <Container maxWidth='xl'>
+            <Toolbar disableGutters>
+              {/* Logo Desktop */}
+              <Typography
+                variant='h6'
+                noWrap
+                sx={{
+                  mr: 2,
+                  display: {
+                    xs: 'none',
+                    md: 'block',
+                  },
+                  fontFamily: 'lato',
+                  fontWeight: 700,
+                  letterSpacing: '.3rem',
+                  color: 'inherit',
+                  textDecoration: 'none',
+                  fontSize: '2rem',
+                  py: 2,
+                }}
+              >
+                Portfolio
+              </Typography>
+              {/* Logo (Mobile) */}
+              <Typography
+                variant='h5'
+                href=''
+                sx={{
+                  mr: 2,
+                  display: { md: 'none' },
+                  flexGrow: 1,
+                  fontFamily: 'lato',
+                  fontWeight: 700,
+                  letterSpacing: '.3rem',
+                  color: 'inherit',
+                  textDecoration: 'none',
+                }}
+              >
+                Portfolio
+              </Typography>
+            </Toolbar>
+          </Container>
+        </AppBar>
+      </Box>
+      <Toolbar />
+    </React.Fragment>
   )
 }
