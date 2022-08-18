@@ -10,8 +10,6 @@ import Slide from '@mui/material/Slide'
 
 import { Box } from '@mui/material'
 
-import Link from 'next/link'
-
 function HideOnScroll(props) {
   const { children, window } = props
   // Note that you normally won't need to set the window ref as useScrollTrigger
@@ -123,7 +121,7 @@ export default function Header(props) {
                   py: 2,
                 }}
               >
-                Portfolio
+                LOGO
               </Typography>
               {/* Logo (Mobile) */}
               <Typography
@@ -140,7 +138,7 @@ export default function Header(props) {
                   textDecoration: 'none',
                 }}
               >
-                Portfolio
+                LOGO
               </Typography>
             </Toolbar>
           </Container>

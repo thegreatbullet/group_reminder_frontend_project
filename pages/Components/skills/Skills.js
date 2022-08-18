@@ -11,7 +11,7 @@ import CardFrontend from './CardFrontend'
 export default function Skill() {
   return (
     <>
-      <Container maxWidth='xl' sx='100vw'>
+      <Container maxWidth='100vw'>
         <Box
           sx={{
             mt: 13,
