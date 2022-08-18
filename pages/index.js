@@ -3,10 +3,9 @@ import React from 'react'
 import Head from 'next/head'
 
 import { ThemeProvider } from '@mui/material'
+import { theme } from '../styles/mui_modification/fonts_modification'
 
-import Header from './mobile_and_desktop/mobile/header/Header'
-import Skills from './Components/skills/Skills'
-import { theme } from '../styles/mui_modification/mui_modification'
+import Header from './components/Header'
 
 export default function Home() {
   return (
@@ -15,7 +14,6 @@ export default function Home() {
         <title>Clement - Testimonial</title>
       </Head>
       <Header />
-      <Skills />
     </ThemeProvider>
   )
 }
