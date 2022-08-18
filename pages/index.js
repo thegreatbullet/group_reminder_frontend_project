@@ -4,7 +4,7 @@ import Head from 'next/head'
 
 import { ThemeProvider } from '@mui/material'
 
-import Header from './generic_components/header/Header'
+import Header from './mobile_and_desktop/mobile/header/Header'
 import Skills from './Components/skills/Skills'
 import { theme } from '../styles/mui_modification/mui_modification'
 
