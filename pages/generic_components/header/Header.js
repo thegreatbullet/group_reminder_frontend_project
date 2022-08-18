@@ -39,7 +39,7 @@ export default function Header(props) {
   return (
     <React.Fragment>
       <CssBaseline />
-      {/* Hide on desktop */}
+      {/* Mobile Display */}
       <Box sx={{ display: { xs: 'block', md: 'none' } }}>
         <HideOnScroll
           {...props}
@@ -50,7 +50,7 @@ export default function Header(props) {
             },
           }}
         >
-          <AppBar>
+          <AppBar className='header header--mobile'>
             <Container maxWidth='xl'>
               <Toolbar disableGutters>
                 {/* Logo Desktop */}
@@ -63,7 +63,7 @@ export default function Header(props) {
                       xs: 'none',
                       md: 'block',
                     },
-                    fontFamily: 'lato',
+                    fontFamily: 'inherit',
                     fontWeight: 700,
                     letterSpacing: '.3rem',
                     color: 'inherit',
@@ -72,7 +72,7 @@ export default function Header(props) {
                     py: 2,
                   }}
                 >
-                  Portfolio
+                  LOGO
                 </Typography>
                 {/* Logo (Mobile) */}
                 <Typography
@@ -89,7 +89,7 @@ export default function Header(props) {
                     textDecoration: 'none',
                   }}
                 >
-                  Portfolio
+                  LOGO
                 </Typography>
               </Toolbar>
             </Container>
@@ -99,7 +99,7 @@ export default function Header(props) {
 
       {/* Hide on mobile */}
       <Box sx={{ display: { xs: 'none', md: 'block' } }}>
-        <AppBar>
+        <AppBar className='header header--desktop'>
           <Container maxWidth='xl'>
             <Toolbar disableGutters>
               {/* Logo Desktop */}
@@ -112,7 +112,7 @@ export default function Header(props) {
                     xs: 'none',
                     md: 'block',
                   },
-                  fontFamily: 'lato',
+                  fontFamily: 'inherit',
                   fontWeight: 700,
                   letterSpacing: '.3rem',
                   color: 'inherit',
@@ -131,7 +131,7 @@ export default function Header(props) {
                   mr: 2,
                   display: { md: 'none' },
                   flexGrow: 1,
-                  fontFamily: 'lato',
+                  fontFamily: 'inherit',
                   fontWeight: 700,
                   letterSpacing: '.3rem',
                   color: 'inherit',

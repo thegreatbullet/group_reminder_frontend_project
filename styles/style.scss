@@ -1,5 +1,8 @@
 @use './variables/colors';
 
-h3 {
-  color: colors.$header-background-primary;
+*, body {
+  font-family: 'Rosario', sans-serif;
+}
+.header {
+  background-color: colors.$header-background-primary;
 }

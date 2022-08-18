@@ -18,6 +18,16 @@ export default function Document() {
           href='https://languages.abranhe.com/logos.css'
           rel='stylesheet'
         ></link>
+        <link rel='preconnect' href='https://fonts.googleapis.com' />
+        <link
+          rel='preconnect'
+          href='https://fonts.gstatic.com'
+          crossOrigin='true'
+        />
+        <link
+          href='https://fonts.googleapis.com/css2?family=Rosario:wght@400;500;600;700&display=swap'
+          rel='stylesheet'
+        />
       </Head>
       <body>
         <Main />
