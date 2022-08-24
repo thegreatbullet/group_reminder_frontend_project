@@ -14,9 +14,17 @@ export default function HeaderDesktop() {
     <>
       <CssBaseline />
       <Box sx={{ display: { xs: 'none', md: 'block' } }}>
-        <AppBar className='header header--desktop' sx={{ py: 0.1 }}>
+        <AppBar
+          className='header header--desktop'
+          position='static'
+          sx={{ py: 0.1 }}
+        >
           <Container maxWidth='xl'>
-            <Toolbar disableGutters>
+            <Toolbar
+              variant='dense'
+              disableGutters
+              sx={{ justifyContent: 'center' }}
+            >
               <Link href='/'>
                 <Typography
                   variant='h6'
@@ -37,7 +45,6 @@ export default function HeaderDesktop() {
           </Container>
         </AppBar>
       </Box>
-      <Toolbar />
     </>
   )
 }

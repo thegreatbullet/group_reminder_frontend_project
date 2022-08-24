@@ -46,7 +46,7 @@ export default function HeaderMobile(props) {
         <HideOnScroll {...props}>
           <AppBar name='header header--mobile'>
             <Container maxWidth='xl'>
-              <Toolbar disableGutters>
+              <Toolbar disableGutters sx={{ justifyContent: 'center' }}>
                 <Link href='/'>
                   <Typography
                     variant='h5'
@@ -70,7 +70,6 @@ export default function HeaderMobile(props) {
           </AppBar>
         </HideOnScroll>
       </Box>
-      <Toolbar />
     </React.Fragment>
   )
 }
