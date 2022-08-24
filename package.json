@@ -6,7 +6,9 @@
     "dev": "next dev -p 3000",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "jest --watch",
+    "cypress": "cypress open"
   },
   "dependencies": {
     "@emotion/react": "^11.10.0",
@@ -22,8 +24,12 @@
     "react-vertical-timeline-component": "^3.5.2"
   },
   "devDependencies": {
+    "@testing-library/react": "13.3.0",
+    "@testing-library/user-event": "14.2.0",
     "eslint": "8.22.0",
     "eslint-config-next": "12.2.5",
+    "jest": "28.1.1",
+    "jest-environment-jsdom": "28.1.1",
     "sass": "^1.54.4"
   }
 }
