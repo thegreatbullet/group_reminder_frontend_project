@@ -5,14 +5,12 @@ import Link from 'next/link'
 import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
-import CssBaseline from '@mui/material/CssBaseline'
 import Container from '@mui/material/Container'
 import { Box } from '@mui/material'
 
 export default function HeaderDesktop() {
   return (
     <>
-      <CssBaseline />
       <Box sx={{ display: { xs: 'none', md: 'block' } }}>
         <AppBar
           className='header header--desktop'
@@ -20,11 +18,7 @@ export default function HeaderDesktop() {
           sx={{ py: 0.1 }}
         >
           <Container maxWidth='xl'>
-            <Toolbar
-              variant='dense'
-              disableGutters
-              sx={{ justifyContent: 'center' }}
-            >
+            <Toolbar disableGutters sx={{ justifyContent: 'center' }}>
               <Link href='/'>
                 <Typography
                   variant='h6'
