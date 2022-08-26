@@ -16,11 +16,19 @@ export default function Home() {
     <ThemeProvider theme={theme}>
       <Box>
         <Head>
-          <title>LOGO - Homepage</title>
+          <title>LOGO as- Homepage</title>
         </Head>
-        <Header />
-        <Sidebar />
-        <MainApp />
+
+        <Box sx={{ display: 'flex' }}>
+          <Sidebar />
+          <Box
+            component='main'
+            sx={{ flexGrow: 1, bgcolor: 'background.default' }}
+          >
+            <Header />
+            <MainApp />
+          </Box>
+        </Box>
       </Box>
     </ThemeProvider>
   )

@@ -5,10 +5,12 @@ import CardContent from '@mui/material/CardContent'
 import Typography from '@mui/material/Typography'
 
 import List from '../generic_components/List'
+import ButtonAdd from '../generic_components/ButtonAdd'
+import { Toolbar } from '@mui/material'
 
 const card = (
   <React.Fragment>
-    <Card variant='outlined' sx={{ ml: 50 }}>
+    <Card variant='outlined'>
       <CardContent>
         <Typography sx={{ fontSize: 14 }} color='text.secondary' gutterBottom>
           Todo: Today
@@ -20,5 +22,10 @@ const card = (
 )
 
 export default function OutlinedCard() {
-  return <Box>{card}</Box>
+  return (
+    <>
+      <ButtonAdd />
+      <Box>{card}</Box>
+    </>
+  )
 }

@@ -1,0 +1,17 @@
+User is Wayne
+
+Wayne wants to create a group for his family
+
+  Create group
+- Clicks on add button, form pops up
+- Enters group name, and clicks enter
+- form closes, popup informs that group has been created
+- popup can be closed or auto close after delay
+- new group appears on sidebar
+
+  Adding members to group
+- clicks on family group in sidebar
+- adds son
+- son is added to group
+
+Wayne wants to add reminder for son
