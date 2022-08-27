@@ -1,0 +1,106 @@
+[
+  {
+    "id": 1,
+    "title": "Complete MA1511 Tutorials",
+    "steps": {
+      "1": "Go to luminus",
+      "2": "Download tutorial problems and solutions from sidebar",
+      "3": "Attempt problems 1-6",
+      "4": "Finish"
+    },
+    "due_date": "now"
+  },
+  {
+    "id": 2,
+    "title": "Buy groceries",
+    "steps": {
+      "1": "Write shopping list",
+      "2": "Buy food listed on the shopping list",
+      "3": "Finish"
+    },
+    "due_date": "later"
+  },
+  {
+    "id": 3,
+    "title": "Go for a run",
+    "steps": {
+      "1": "Prepare workout clothes",
+      "2": "Drink milo",
+      "3": "Run",
+      "4": "Finish"
+    },
+    "due_date": "later"
+  },
+  {
+    "id": 4,
+    "title": "Complete Chemistry Lectures",
+    "steps": {
+      "1": "Go to canvas@nus",
+      "2": "Watch lectures 1&2",
+      "3": "Finish"
+    },
+    "due_date": "Waiting for 1 to be completed"
+  },
+  {
+    "id": 5,
+    "title": "Cook dinner for date",
+    "steps": {
+      "1": "Print out recipe",
+      "2": "Buy groceries from supermarket",
+      "3": "Cook the food",
+      "4": "Finish"
+    },
+    "due_date": "Waiting for 2 to be completed"
+  },
+  {
+    "id": 6,
+    "title": "Contact Mr Lim (Photography)",
+    "steps": {
+      "0": "No steps needed"
+    },
+    "due_date": "Waiting for 3 to be completed"
+  },
+  {
+    "id": 7,
+    "title": "Buy presents for children",
+    "steps": {
+      "1": "Buy wrapping paper",
+      "2": "Buy lego for Tom and Dinosaur for Chris",
+      "3": "Wrap the presents",
+      "4": "Finish"
+    },
+    "due_date": "now"
+  },
+  {
+    "id": 8,
+    "title": "Polish car",
+    "steps": {
+      "1": "Grab pail, cloth and wax",
+      "2": "Wash the car first",
+      "3": "Wax after drying the car",
+      "4": "Finish"
+    },
+    "due_date": "This saturday"
+  },
+  {
+    "id": 9,
+    "title": "Write chapter 6 of book",
+    "steps": {
+      "1": "Plan out ideas and structure",
+      "2": "Make coffee and charge laptop",
+      "3": "Write",
+      "4": "Finish"
+    },
+    "due_date": "now"
+  },
+  {
+    "id": 10,
+    "title": "Go to school",
+    "steps": {
+      "1": "Wake up at 7",
+      "2": "leave house",
+      "3": "Finish"
+    },
+    "due_date": "Monday"
+  }
+]
