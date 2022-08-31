@@ -7,14 +7,11 @@ function handleButtomSubmitForm(event) {
   console.log('You have submitted the form')
 }
 
-export default function ButtonAddGroup() {
+export default function ButtonAddGroup({ onClick }) {
   return (
     <>
       <div data-testid='buttonSubmitForm'>
-        <ButtonAdd
-          onClick={handleButtomSubmitForm}
-          buttonText={'Submit Form'}
-        />
+        <ButtonAdd onClick={onClick} buttonText={'Submit Form'} type='submit' />
       </div>
     </>
   )
