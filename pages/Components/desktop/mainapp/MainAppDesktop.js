@@ -2,14 +2,16 @@ import * as React from 'react'
 
 import Box from '@mui/material/Box'
 
-import ButtonAdd from '../generic_components/ButtonAdd'
-import CustomCard from '../generic_components/CustomCard'
+import ButtonAddGroup from './components/ButtonAddGroup'
+import ButtonSubmitForm from './components/ButtonSubmitForm'
+import CustomCard from '../generic_components/CardCustom'
+import FormNewGroup from '../generic_components/FormCustom'
 
 export default function MainAppDesktop() {
   return (
     <Box sx={{ p: 5 }}>
       <Box sx={{ mb: 5 }}>
-        <ButtonAdd />
+        <ButtonAddGroup />
       </Box>
 
       <Box sx={{ display: 'flex' }}>
@@ -17,7 +19,11 @@ export default function MainAppDesktop() {
         <CustomCard date='Tomorrow' />
       </Box>
 
-      <Box></Box>
+      <Box>
+        <FormNewGroup />
+        <ButtonSubmitForm />
+      </Box>
+      <button>Hello</button>
     </Box>
   )
 }

@@ -2,7 +2,7 @@ import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import Typography from '@mui/material/Typography'
 
-import List from './CustomList'
+import List from './ListCustom'
 
 export default function CustomCard({ date }) {
   return (
