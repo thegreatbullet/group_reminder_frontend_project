@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import Box from '@mui/material/Box'
 import TextField from '@mui/material/TextField'
 
-export default function Form({ title, body, todo }) {
+import Button from '@mui/material/Button'
+
+export default function Form({ title, body, todo, handleSubmit }) {
+  const [titleValue, setTitle] = useState('')
   return (
     <div>
       <Box
@@ -15,10 +18,12 @@ export default function Form({ title, body, todo }) {
         }}
         noValidate
         autoComplete='off'
+        onSubmit={handleSubmit}
       >
         <TextField
           id='standard-helperText'
           label={title || 'Title'}
+          value={titleValue}
           variant='standard'
         />
         <TextField
@@ -31,6 +36,7 @@ export default function Form({ title, body, todo }) {
           label={todo || 'todo'}
           variant='standard'
         />
+        <Button variant='outlined'>{'Add New'}</Button>
       </Box>
     </div>
   )

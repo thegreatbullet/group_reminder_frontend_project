@@ -1,10 +1,6 @@
-import * as React from 'react'
-import Script from 'next/script'
-
 import Box from '@mui/material/Box'
 
 import ButtonAddGroup from './components/ButtonAddGroup'
-import ButtonSubmitForm from './components/ButtonSubmitForm'
 import CustomCard from '../generic_components/CardCustom'
 import FormNewGroup from './components/FormNewGroup'
 
