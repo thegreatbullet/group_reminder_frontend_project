@@ -13,7 +13,9 @@ import Header from './components/Header'
 import Sidebar from './components/Sidebar'
 import MainApp from './components/MainApp'
 
-export default function Home(props) {
+export const AccountsDataContext = React.createContext()
+
+export default function Home({ objectData }) {
   return (
     <ThemeProvider theme={theme}>
       <Box>
@@ -28,7 +30,9 @@ export default function Home(props) {
             sx={{ flexGrow: 1, bgcolor: 'background.default' }}
           >
             <Header />
-            <MainApp />
+            <AccountsDataContext.Provider value='Hello'>
+              <MainApp />
+            </AccountsDataContext.Provider>
           </Box>
         </Box>
       </Box>

@@ -1,8 +1,12 @@
+import React from 'react'
+
 import Box from '@mui/material/Box'
 
 import ButtonAddGroup from './components/ButtonAddGroup'
-import CustomCard from '../generic_components/CardCustom'
+import CardCustom from '../generic_components/CardCustom'
 import FormNewGroup from './components/FormNewGroup'
+
+export const MainAppContext = React.createContext()
 
 export default function MainAppDesktop() {
   return (
@@ -13,8 +17,8 @@ export default function MainAppDesktop() {
         </Box>
 
         <Box sx={{ display: 'flex' }}>
-          <CustomCard date='Today' />
-          <CustomCard date='Tomorrow' />
+          <CardCustom />
+          <CardCustom date='Tomorrow' />
         </Box>
 
         <Box>
