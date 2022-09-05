@@ -1,8 +1,6 @@
 import React from 'react'
 
 import Head from 'next/head'
-import fsPromises from 'fs/promises'
-import path from 'path'
 
 import { ThemeProvider } from '@mui/material'
 import { theme } from '../styles/mui_modification/fonts_modification'
@@ -13,9 +11,11 @@ import Header from './components/Header'
 import Sidebar from './components/Sidebar'
 import MainApp from './components/MainApp'
 
+import { accounts } from './api/accounts.json'
+
 export const AccountsDataContext = React.createContext()
 
-export default function Home({ objectData }) {
+export default function Home() {
   return (
     <ThemeProvider theme={theme}>
       <Box>
@@ -30,7 +30,7 @@ export default function Home({ objectData }) {
             sx={{ flexGrow: 1, bgcolor: 'background.default' }}
           >
             <Header />
-            <AccountsDataContext.Provider value='Hello'>
+            <AccountsDataContext.Provider value={accounts}>
               <MainApp />
             </AccountsDataContext.Provider>
           </Box>
@@ -38,14 +38,4 @@ export default function Home({ objectData }) {
       </Box>
     </ThemeProvider>
   )
-}
-
-export async function getStaticProps() {
-  const filePath = path.join(process.cwd(), 'sample_data/accounts.json')
-  const jsonData = await fsPromises.readFile(filePath)
-  const objectData = JSON.parse(jsonData)
-
-  return {
-    props: objectData,
-  }
 }

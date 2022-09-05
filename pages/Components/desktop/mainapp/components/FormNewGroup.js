@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 
 import Box from '@mui/material/Box'
 import TextField from '@mui/material/TextField'
-
 import Button from '@mui/material/Button'
+
 import { AccountsDataContext } from '../../../..'
 
 export default function Form() {
@@ -17,6 +17,10 @@ export default function Form() {
       console.log(title)
       console.log(accountsData)
     }
+  }
+
+  function handleFormCreateClick() {
+    console.log('Created')
   }
 
   return (
@@ -38,7 +42,11 @@ export default function Form() {
           variant='standard'
           onChange={(e) => setTitle(e.target.value)}
         />
-        <Button variant='outlined' type='submit'>
+        <Button
+          variant='outlined'
+          type='submit'
+          onClick={handleFormCreateClick}
+        >
           {'Create'}
         </Button>
       </Box>
