@@ -2,9 +2,9 @@ import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import Typography from '@mui/material/Typography'
 
-import List from './ListCustom'
+import List from './CustomList'
 
-export default function CustomCard({ date }) {
+export default function CustomCard() {
   return (
     <Card
       variant='outlined'
@@ -18,7 +18,7 @@ export default function CustomCard({ date }) {
     >
       <CardContent>
         <Typography sx={{ fontSize: 14 }} color='text.secondary' gutterBottom>
-          Todo: {date}
+          Todo:
         </Typography>
         <List />
       </CardContent>

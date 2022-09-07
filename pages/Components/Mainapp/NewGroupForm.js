@@ -4,38 +4,27 @@ import Box from '@mui/material/Box'
 import TextField from '@mui/material/TextField'
 import Button from '@mui/material/Button'
 
-import { AccountsDataContext } from '../../../..'
+import { AccountsDataContext } from '../..'
 
-export default function Form() {
+import { useGroupContext } from '../../context/group_context'
+
+export default function FormNewGroup() {
+  const { groupName, closeNewGroupForm } = useGroupContext()
   const accountsData = React.useContext(AccountsDataContext)
   const [title, setTitle] = useState('')
 
   function handleSubmit(e) {
     e.preventDefault()
-
-    if (title) {
-      console.log(title)
-      console.log(accountsData)
-    }
   }
 
-  function handleFormCreateClick() {
-    console.log('Created')
+  function handleClick(e) {
+    e.preventDefault()
+    closeNewGroupForm()
   }
 
   return (
     <div>
-      <Box
-        component='form'
-        display='flex'
-        sx={{
-          '& .MuiTextField-root': { m: 1, width: '25ch' },
-          flexDirection: 'column',
-        }}
-        noValidate
-        autoComplete='off'
-        onSubmit={handleSubmit}
-      >
+      <form action='/api/form' method='post'>
         <TextField
           id='standard-helperText'
           label={'Group Name'}
@@ -45,11 +34,12 @@ export default function Form() {
         <Button
           variant='outlined'
           type='submit'
-          onClick={handleFormCreateClick}
+          onClick={handleClick}
+          sx={{ width: 1 / 20 }}
         >
           {'Create'}
         </Button>
-      </Box>
+      </form>
     </div>
   )
 }
