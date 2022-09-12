@@ -2,24 +2,20 @@ import {
   OPEN_NEW_GROUP_FORM,
   CLOSE_NEW_GROUP_FORM,
   ADD_NEW_GROUP,
+  INITIALIZE_GROUPS,
 } from '../action/action'
 
 export default function group_reducer(state, action) {
-  if (action.type === OPEN_NEW_GROUP_FORM) {
-    console.log(action)
-    return { ...state, isNewGroupFormOpen: true }
+  switch (action.type) {
+    case INITIALIZE_GROUPS:
+      return { ...state, groups: action.payload }
+    case OPEN_NEW_GROUP_FORM:
+      return { ...state, isNewGroupFormOpen: true }
+    case CLOSE_NEW_GROUP_FORM:
+      return { ...state, isNewGroupFormOpen: false }
+    case ADD_NEW_GROUP:
+      return { ...state }
+    default:
+      throw new Error(`No matching "${action.type}" action type`)
   }
-
-  if (action.type === CLOSE_NEW_GROUP_FORM) {
-    return { ...state, isNewGroupFormOpen: false }
-  }
-
-  if (action.type === ADD_NEW_GROUP) {
-    return {
-      ...state,
-    }
-  }
-  return state
-
-  throw new Error(`No matching "${action.type}" action type`)
 }

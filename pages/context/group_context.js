@@ -4,30 +4,12 @@ import {
   OPEN_NEW_GROUP_FORM,
   CLOSE_NEW_GROUP_FORM,
   ADD_NEW_GROUP,
+  INITIALIZE_GROUPS,
 } from '../action/action'
 import group_reducer from '../reducers/group_reducer.js'
 
 const initialState = {
-  groupTitle: '',
-  groups: [
-    {
-      id: 1,
-      name: 'Group1',
-    },
-    {
-      id: 2,
-      name: 'Group2',
-    },
-    {
-      id: 3,
-      name: 'Group3',
-    },
-    {
-      id: 4,
-      name: 'Group4',
-    },
-  ],
-
+  groups: [],
   isNewGroupFormOpen: false,
 }
 
@@ -35,8 +17,13 @@ const GroupsContext = React.createContext()
 
 export function GroupsProvider({ children }) {
   const [state, dispatch] = useReducer(group_reducer, initialState)
+  // Initialize Groups
 
-  // OPEN/CLOSE NEW GROUP FORM
+  function initializeGroups(data) {
+    dispatch({ type: INITIALIZE_GROUPS, payload: data })
+  }
+
+  // Open/Close New Group Form
   function openNewGroupForm() {
     dispatch({ type: OPEN_NEW_GROUP_FORM })
   }
@@ -45,7 +32,7 @@ export function GroupsProvider({ children }) {
     dispatch({ type: CLOSE_NEW_GROUP_FORM })
   }
 
-  // ADD GROUP TO CONTEXT
+  // Add Group to Context
 
   function addNewGroup() {
     dispatch({ type: ADD_NEW_GROUP, payload: groups })
@@ -53,7 +40,12 @@ export function GroupsProvider({ children }) {
 
   return (
     <GroupsContext.Provider
-      value={{ ...state, openNewGroupForm, closeNewGroupForm }}
+      value={{
+        ...state,
+        openNewGroupForm,
+        closeNewGroupForm,
+        initializeGroups,
+      }}
     >
       {children}
     </GroupsContext.Provider>

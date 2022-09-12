@@ -8,11 +8,10 @@ import Box from '@mui/material/Box'
 
 import { Header, MainApp, Sidebar } from './components/main'
 import { GroupsProvider } from './context/group_context'
-import { accounts } from './api/accounts.json'
 
-export const AccountsDataContext = React.createContext()
+import { loadGroups } from './api/groups_data'
 
-export default function Home() {
+export default function Home({ groups }) {
   return (
     <GroupsProvider>
       <ThemeProvider theme={theme}>
@@ -28,11 +27,18 @@ export default function Home() {
               sx={{ flexGrow: 1, bgcolor: 'background.default' }}
             >
               <Header />
-              <MainApp />
+              <MainApp groupsData={groups} />
             </Box>
           </Box>
         </Box>
       </ThemeProvider>
     </GroupsProvider>
   )
+}
+
+export async function getStaticProps() {
+  const groups = await loadGroups()
+
+  // Props returned will be passed to the page component
+  return { props: { groups } }
 }

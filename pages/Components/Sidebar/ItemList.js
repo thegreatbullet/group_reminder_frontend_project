@@ -12,7 +12,6 @@ import { useGroupContext } from '../../context/group_context'
 
 export default function ItemList() {
   const { groups } = useGroupContext()
-  console.log(groups[0])
   return (
     <>
       <List>

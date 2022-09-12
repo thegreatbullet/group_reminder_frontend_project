@@ -4,13 +4,10 @@ import Box from '@mui/material/Box'
 import TextField from '@mui/material/TextField'
 import Button from '@mui/material/Button'
 
-import { AccountsDataContext } from '../..'
-
 import { useGroupContext } from '../../context/group_context'
 
 export default function FormNewGroup() {
-  const { groupName, closeNewGroupForm } = useGroupContext()
-  const accountsData = React.useContext(AccountsDataContext)
+  const { closeNewGroupForm } = useGroupContext()
   const [title, setTitle] = useState('')
 
   function handleSubmit(e) {
