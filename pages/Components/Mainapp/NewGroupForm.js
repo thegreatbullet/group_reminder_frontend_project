@@ -6,17 +6,18 @@ import Button from '@mui/material/Button'
 
 import { useGroupContext } from '../../context/group_context'
 
-export default function FormNewGroup() {
+export default function NewGroupForm() {
   const { closeNewGroupForm } = useGroupContext()
   const [title, setTitle] = useState('')
 
-  function handleSubmit(e) {
-    e.preventDefault()
-  }
-
   function handleClick(e) {
     e.preventDefault()
+    console.log(title)
     closeNewGroupForm()
+  }
+
+  async function submitForm() {
+    const response = await fetch()
   }
 
   return (

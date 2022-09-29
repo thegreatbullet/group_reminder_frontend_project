@@ -17,8 +17,8 @@ const GroupsContext = React.createContext()
 
 export function GroupsProvider({ children }) {
   const [state, dispatch] = useReducer(group_reducer, initialState)
-  // Initialize Groups
 
+  // Initialize Groups
   function initializeGroups(data) {
     dispatch({ type: INITIALIZE_GROUPS, payload: data })
   }
@@ -33,7 +33,6 @@ export function GroupsProvider({ children }) {
   }
 
   // Add Group to Context
-
   function addNewGroup() {
     dispatch({ type: ADD_NEW_GROUP, payload: groups })
   }

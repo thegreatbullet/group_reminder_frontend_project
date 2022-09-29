@@ -2,7 +2,8 @@ import Box from '@mui/material/Box'
 import Drawer from '@mui/material/Drawer'
 import Divider from '@mui/material/Divider'
 
-import ItemList from './Sidebar/ItemList'
+import GroupList from './Sidebar/GroupList'
+import AddGroup from './Sidebar/AddGroup'
 
 import { useGroupsContext } from '../context/group_context'
 
@@ -26,11 +27,13 @@ export default function Sidebar() {
         <Divider />
 
         {/* First block of item */}
-        <ItemList />
+        <Box sx={{ py: 2, px: 1 }}>
+          <AddGroup />
+        </Box>
         <Divider />
 
         {/* Second block of item */}
-        <ItemList />
+        <GroupList />
       </Drawer>
     </Box>
   )

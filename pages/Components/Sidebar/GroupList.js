@@ -10,7 +10,7 @@ import MailIcon from '@mui/icons-material/Mail'
 
 import { useGroupContext } from '../../context/group_context'
 
-export default function ItemList() {
+export default function GroupList() {
   const { groups } = useGroupContext()
   return (
     <>

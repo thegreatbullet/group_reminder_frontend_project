@@ -13,16 +13,11 @@ export default function MainApp({ groupsData }) {
   // Initialize the data once
   useEffect(() => {
     initializeGroups(groupsData)
-  }, [groupsData])
+  }, [])
 
   return (
     <>
-      <Box>
-        <Button variant='outlined' sx={{ m: 5 }} onClick={openNewGroupForm}>
-          Add New Group
-        </Button>
-        {isNewGroupFormOpen ? <NewGroupForm /> : <></>}
-      </Box>
+      <Box>{isNewGroupFormOpen ? <NewGroupForm /> : <></>}</Box>
     </>
   )
 }
